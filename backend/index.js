@@ -1,7 +1,7 @@
 const cors = require('cors');
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 // const { PrismaClient } = require('@prisma/client');
 // const prisma = new PrismaClient();
@@ -16,7 +16,7 @@ app.use('/boards', boards);
 app.use('/boards/:boardId/cards', cards);
 
 app.listen(PORT, () => {
-  console.log(`Server is running!`)
+  console.log(`Server is running on ${PORT}!`)
 });
 
 module.exports = app;
