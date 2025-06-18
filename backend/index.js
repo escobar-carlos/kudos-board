@@ -1,21 +1,22 @@
 const cors = require('cors');
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT;
 
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+// const { PrismaClient } = require('@prisma/client');
+// const prisma = new PrismaClient();
 
-const routes = require('./routes/boards');
+// const boards = require('./routes/boards');
+// const cards = require('./routes/cards');
 
 app.use(cors());
 app.use(express.json());
 
-app.use('/boards', routes);
+// app.use('/boards', boards);
+// app.use('/boards/:boardId/cards', cards);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`)
 });
-
 
 module.exports = app;
