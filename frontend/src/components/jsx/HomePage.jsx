@@ -22,7 +22,7 @@ function HomePage() {
 
   useEffect(() => {
     renderBoards();
-  }, [searchQuery, filter]);
+  }, [searchQuery, filter, boardData]);
 
   const fetchBoards = async () => {
     try {
@@ -82,9 +82,8 @@ function HomePage() {
         <Filter category={'Inspiration'} handleFilterClick={handleFilterClick}/>
       </div>
       <button id="create-new-button" onClick={toggleForm}>Create a New Board</button>
-      {/* NewBoardForm should only popup when the button above is clicked*/}
-      {showForm && <NewBoardForm onClose={toggleForm}/>}
-      {boardData && <BoardList boardData={filteredBoardData}/>}
+      {showForm && <NewBoardForm onClose={toggleForm} onBoardAdded={fetchBoards}/>}
+      {boardData && <BoardList boardData={filteredBoardData} onBoardDeleted={fetchBoards}/>}
       <Footer />
     </div>
   )

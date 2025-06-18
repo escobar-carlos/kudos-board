@@ -36,13 +36,9 @@ function BoardPage() {
       <Link to={'/'}>
         <span id="close-board">&larr;</span>
       </Link>
-      {/* Banner Here */}
-      {/* Board Title Here*/}
-      {/* Create Card Button Here */}
-      {/* CardList Here */}
-      {/* Footer */}
       <Header />
-      <button id="create-new-button" onClick={toggleForm}>Create a New Board</button>
+      {/* TODO: Board Title Here*/}
+      <button id="create-new-button" onClick={toggleForm}>Create a New Card</button>
       {/* NewBoardForm should only popup when the button above is clicked*/}
       {showForm && <NewCardForm onClose={toggleForm}/>}
       {cardData && <CardList cardData={cardData}/>}

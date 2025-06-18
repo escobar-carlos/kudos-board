@@ -18,14 +18,16 @@ function NewCardForm({ onClose }) {
       <div id="new-card-content">
         <span id="close-new-card" onClick={handleClickClose}>&times;</span>
         <h2>Create a New Card</h2>
-        <input type="text" placeholder='Enter card title' />
-        <input type="text" placeholder='Enter card description' />
-        <input type="Search GIFs..." />
-        <button type='submit'>Search</button>
-        <input type="text" placeholder='Enter GIF URL'/>
-        <button type='submit'>Copy GIF URL</button>
-        <input type="text" placeholder='Enter owner (optional)'/>
-        <button type='submit'>Create Card</button>
+        <form id="card-form">
+          <input type="text" placeholder='Enter card title' />
+          <input type="text" placeholder='Enter card description' />
+          <input type="Search GIFs..." />
+          <button type='submit'>Search</button>
+          <input type="text" placeholder='Enter GIF URL'/>
+          <button type='submit'>Copy GIF URL</button>
+          <input type="text" placeholder='Enter owner (optional)'/>
+          <button type='submit'>Create Card</button>
+        </form>
       </div>
     </div>
   )

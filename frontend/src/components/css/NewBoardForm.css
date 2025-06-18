@@ -37,6 +37,11 @@
   margin-top: 2vh;
 }
 
+#board-form {
+  display: flex;
+  flex-direction: column;
+}
+
 #close-new-board {
   color: #aaa;
   float: right;
