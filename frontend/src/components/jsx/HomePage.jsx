@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './../css/HomePage.css'
-import axios from 'axios'
+import { baseURL } from '../../globals';
 import Header from './Header'
 import SearchForm from './SearchForm'
 import Filter from './Filter'
@@ -26,7 +26,7 @@ function HomePage() {
 
   const fetchBoards = async () => {
     try {
-      const response = await fetch('http://localhost:3000/boards/');
+      const response = await fetch(`${baseURL}/boards/`);
       const data = await response.json();
       setBoardData(data);
       setFilteredBoardData(data);

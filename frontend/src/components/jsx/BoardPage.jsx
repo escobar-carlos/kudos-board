@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './../css/BoardPage.css'
 import { useParams, Link } from "react-router-dom";
-import axios from 'axios'
+import { baseURL } from '../../globals';
 import Header from './Header'
 import NewCardForm from './NewCardForm'
 import CardList from './CardList'
@@ -19,7 +19,7 @@ function BoardPage() {
 
   const fetchCards = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/boards/${boardId}`);
+      const response = await fetch(`${baseURL}/boards/${boardId}/cards`);
       const data = await response.json();
       setCardData(data);
     } catch (error) {

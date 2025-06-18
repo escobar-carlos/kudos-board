@@ -1,3 +1,4 @@
+import { baseURL } from '../../globals';
 import './../css/NewBoardForm.css'
 import axios from 'axios';
 
@@ -26,7 +27,7 @@ function NewBoardForm({ onClose, onBoardAdded }) {
       author
     }
 
-    axios.post('http://localhost:3000/boards/', newBoard)
+    axios.post(`${baseURL}/boards/`, newBoard)
       .then((response) => {
         onClose();
         onBoardAdded();

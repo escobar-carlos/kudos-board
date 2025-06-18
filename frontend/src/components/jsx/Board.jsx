@@ -1,11 +1,12 @@
 import './../css/Board.css'
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import { baseURL } from '../../globals';
 
 function Board({ id, title, category, image, onBoardDeleted }) {
 
   const deleteBoard = () => {
-    axios.delete(`http://localhost:3000/boards/${id}`)
+    axios.delete(`${baseURL}/boards/${id}/`)
       .then((response) => {
         console.log(response);
         onBoardDeleted();

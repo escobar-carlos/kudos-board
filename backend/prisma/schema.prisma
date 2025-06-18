@@ -12,6 +12,7 @@ model Board {
   title    String
   category String
   author   String?
+  // cards    Card[] @onDelete(Cascade)
 }
 
 model Card {
@@ -20,4 +21,5 @@ model Card {
   message  String
   gif      String
   upvotes  Int
+  // comments Comment[]]@onDelete(Cascade)
 }
