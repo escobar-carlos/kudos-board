@@ -1,0 +1,16 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.filters {
+  display: flex;
+  gap: 1vw;
+}
+
+#create-new-button {
+  width: auto;
+}

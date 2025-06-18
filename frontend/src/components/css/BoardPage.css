@@ -1,0 +1,28 @@
+.board-page {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.filters {
+  display: flex;
+  gap: 1vw;
+}
+
+#create-new-button {
+  width: auto;
+}
+
+#close-board {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  cursor: pointer;
+  width: 100vw;
+  margin-right: auto;
+  margin-left: 20px;
+}
