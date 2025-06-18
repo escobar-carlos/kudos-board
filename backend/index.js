@@ -8,13 +8,13 @@ const PORT = 5432;
 // const prisma = new PrismaClient();
 
 const boards = require('./routes/boards');
-const cards = require('./routes/cards');
+// const cards = require('./routes/cards');
 
 app.use(cors());
 app.use(express.json());
 
 app.use('/boards', boards);
-app.use('/boards/:boardId/cards', cards);
+// app.use('/boards/:boardId/cards', cards);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`)
