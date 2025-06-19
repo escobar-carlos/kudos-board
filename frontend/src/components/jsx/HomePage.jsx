@@ -42,7 +42,9 @@ function HomePage() {
       setFilteredBoardData(matchingBoards);
     }
 
-    if (filter) {
+    if (filter == 'Recent') {
+      matchingBoards = matchingBoards.sort((a, b) => b.id - a.id).slice(0, 6);
+    } else if (filter) {
       matchingBoards = matchingBoards.filter(board => board.category == filter);
     }
 
