@@ -12,7 +12,7 @@ model Board {
   title    String
   category String
   author   String?
-  // cards    Card[] @onDelete(Cascade)
+  cards    Card[]
 }
 
 model Card {
@@ -22,5 +22,5 @@ model Card {
   gif      String
   upvotes  Int    @default(0)
   author   String?
-  // comments Comment[]]@onDelete(Cascade)
+  board    Board  @relation(fields: [board_id], references: [id], onDelete: Cascade)
 }
