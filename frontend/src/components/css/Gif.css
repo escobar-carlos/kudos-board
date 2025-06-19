@@ -1,0 +1,6 @@
+.gif {
+  height: 10vh;
+  width: 10vh;
+  object-fit: cover;
+  border-radius: 10px;
+}

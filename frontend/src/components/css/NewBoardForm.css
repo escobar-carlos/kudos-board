@@ -28,10 +28,10 @@
   padding: 3vh 3vw;
 }
 
-#new-board-content img {
+/* #new-board-content img {
   height: 30vh;
   width: auto;
-}
+} */
 
 #new-board-content * {
   margin-top: 2vh;

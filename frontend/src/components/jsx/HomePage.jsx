@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './../css/HomePage.css'
 import { baseURL } from '../../globals';
-import Header from './Header'
+import Banner from './Banner'
 import SearchForm from './SearchForm'
 import Filter from './Filter'
 import NewBoardForm from './NewBoardForm'
@@ -72,7 +72,7 @@ function HomePage() {
 
   return (
     <div className='home-page'>
-      <Header />
+      <Banner />
       <SearchForm handleSearch={handleSearch} handleClear={handleClear}/>
       <div className='filters'>
         <Filter category={'All'} handleFilterClick={handleFilterClick}/>

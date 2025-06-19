@@ -1,9 +1,9 @@
 const cors = require('cors');
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
-// const { PrismaClient } = require('@prisma/client');
+// const { PrismaClient } = requilguhnuutkgcjblnurdhnldtkgfbghetbre('@prisma/client');
 // const prisma = new PrismaClient();
 
 const boards = require('./routes/boards');

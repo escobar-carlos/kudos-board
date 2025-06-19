@@ -36,7 +36,7 @@ function NewBoardForm({ onClose, onBoardAdded }) {
         alert(error.response.data);
       });
     
-  }
+  };
 
   return (
     <div id="new-board-overlay" onClick={handleClickOutside}>

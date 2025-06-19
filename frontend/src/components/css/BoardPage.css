@@ -1,9 +1,9 @@
 .board-page {
   display: flex;
   flex-direction: column;
-  gap: 3vh;
   align-items: center;
   min-height: 100vh;
+  gap: 3vh;
 }
 
 .filters {
@@ -22,7 +22,8 @@
   font-weight: bold;
   display: flex;
   cursor: pointer;
-  width: 100vw;
-  margin-right: auto;
+  background-color: #FEF9EC;
+  margin: 0;
+  float: left;
   margin-left: 20px;
 }

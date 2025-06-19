@@ -9,6 +9,7 @@
 .filters {
   display: flex;
   gap: 1vw;
+  justify-content: center;
 }
 
 #create-new-button {

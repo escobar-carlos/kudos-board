@@ -24,20 +24,43 @@ cards.delete('/:id', async (req, res) => {
     res.status(204).send();
   } catch (error) {
     console.error(error);
-    res.status(404).send('Board not found');
+    res.status(404).send('Card not found');
   }
 });
 
-// cards.put('/:id/:card_id', async (req, res) => {
-//   try {
-//     const id = parseInt(req.params.id);
-//     const card_id = parseInt(req.params.card_id);
-//     const updated = await prisma.card.update({ where: {card_id} });
-//     res.status(204).send();
-//   } catch (error) {
-//     console.error(error);
-//     res.status(404).send('Board not found')
-//   }
-// });
+cards.post('/', async (req, res) => {
+  const boardId = parseInt(req.params.boardId);
+  const {message, gif} = req.body;
+  if (!message || !gif) {
+    return res.status(400).send('Message and Gif are required.');
+  }
+
+  const newCard = await prisma.card.create({
+    data: {
+      board_id: boardId,
+      ...req.body
+    }
+  });
+
+  res.status(201).json(newCard);
+});
+
+cards.patch('/:id/upvote', async (req, res) => {
+  try {
+    const id = parseInt(req.params.id);
+    const updated = await prisma.card.update({
+      where: {id},
+      data: {
+        upvotes: {
+          increment: 1
+        }
+      }
+    });
+    res.status(200).send(updated);
+  } catch (error) {
+    console.error(error);
+    res.status(404).send('Card not found')
+  }
+});
 
 module.exports = cards;

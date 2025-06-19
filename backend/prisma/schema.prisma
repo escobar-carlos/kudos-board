@@ -20,6 +20,7 @@ model Card {
   board_id Int
   message  String
   gif      String
-  upvotes  Int
+  upvotes  Int    @default(0)
+  author   String?
   // comments Comment[]]@onDelete(Cascade)
 }
