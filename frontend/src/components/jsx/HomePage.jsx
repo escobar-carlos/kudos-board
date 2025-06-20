@@ -3,7 +3,7 @@ import './../css/HomePage.css'
 import { baseURL } from '../../globals';
 import Banner from './Banner'
 import SearchForm from './SearchForm'
-import Filter from './Filter'
+import FilterList from './FilterList';
 import NewBoardForm from './NewBoardForm'
 import BoardList from './BoardList'
 import Footer from './Footer'
@@ -72,17 +72,20 @@ function HomePage() {
     setFilter('');
   }
 
+  const filters = ['All', 'Recent', 'Celebrations', 'Thank You', 'Inspiration'];
+
   return (
     <div className='home-page'>
       <Banner />
       <SearchForm handleSearch={handleSearch} handleClear={handleClear}/>
-      <div className='filters'>
+      <FilterList filters={filters} handleFilterClick={handleFilterClick}/>
+      {/* <div className='filters'>
         <Filter category={'All'} handleFilterClick={handleFilterClick}/>
         <Filter category={'Recent'} handleFilterClick={handleFilterClick}/>
         <Filter category={'Celebration'} handleFilterClick={handleFilterClick}/>
         <Filter category={'Thank You'} handleFilterClick={handleFilterClick}/>
         <Filter category={'Inspiration'} handleFilterClick={handleFilterClick}/>
-      </div>
+      </div> */}
       <button id="create-new-button" onClick={toggleForm}>Create a New Board</button>
       {showForm && <NewBoardForm onClose={toggleForm} onBoardAdded={fetchBoards}/>}
       {boardData && <BoardList boardData={filteredBoardData} onBoardDeleted={fetchBoards}/>}

@@ -1,4 +1,3 @@
-import './../css/Filter.css'
 
 function Filter({ category, handleFilterClick }) {
   return (
