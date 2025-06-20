@@ -4,15 +4,15 @@ const cards = express.Router({ mergeParams: true });
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient();
 
-// cards.get('/', async (req, res) => {
-//   const cards = await prisma.card.findMany();
-//   res.send(cards);
-// });
-
 cards.get('/', async (req, res) => {
   const boardId = parseInt(req.params.boardId);
   const cards = await prisma.card.findMany({
-    where: {board_id: boardId}
+    where: {board_id: boardId},
+    orderBy: [
+      { pinned: 'desc' },
+      { pin_date: 'desc' },
+      { id: 'desc'}
+    ]
   })
   res.json(cards);
 });
@@ -56,6 +56,30 @@ cards.patch('/:id/upvote', async (req, res) => {
         }
       }
     });
+    res.status(200).send(updated);
+  } catch (error) {
+    console.error(error);
+    res.status(404).send('Card not found')
+  }
+});
+
+cards.patch('/:id/pin', async (req, res) => {
+  try {
+    const id = parseInt(req.params.id);
+
+    const prev_card = await prisma.card.findUnique({
+      where: {id}
+    });
+
+    // dataeteuuhhvkklnceteednjlfhnlirrrvce
+    // if not pinned, then add new Date, else null
+    // pinned = !pinned
+
+    const updated = await prisma.card.update({
+      where: {id},
+      data: {pin_date: prev_card.pinned ? null : new Date(), pinned: !prev_card.pinned}
+    });
+
     res.status(200).send(updated);
   } catch (error) {
     console.error(error);

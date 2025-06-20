@@ -40,9 +40,8 @@ function BoardPage() {
         <Banner />
       </div>
       <button id="create-new-button" onClick={toggleForm}>Create a New Card</button>
-      {/* NewBoardForm should only popup when the button above is clicked*/}
       {showForm && <NewCardForm boardId={boardId} onClose={toggleForm} onCardAdded={fetchCards}/>}
-      {cardData && <CardList cardData={cardData} onCardDeleted={fetchCards}/>}
+      {cardData && <CardList cardData={cardData} onCardDeleted={fetchCards} onPin={fetchCards}/>}
       <Footer />
     </div>
   )

@@ -16,11 +16,13 @@ model Board {
 }
 
 model Card {
-  id       Int    @id @default(autoincrement())
-  board_id Int
-  message  String
-  gif      String
-  upvotes  Int    @default(0)
-  author   String?
-  board    Board  @relation(fields: [board_id], references: [id], onDelete: Cascade)
+  id          Int      @id @default(autoincrement())
+  board_id    Int
+  message     String
+  gif         String
+  upvotes     Int      @default(0)
+  author      String?
+  pinned      Boolean  @default(false)
+  pin_date    DateTime?
+  board       Board    @relation(fields: [board_id], references: [id], onDelete: Cascade)
 }

@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { baseURL } from '../../globals';
 import axios from 'axios';
 
-function Card({ id, board_id, message, gif, author, upvotes_on_load, onCardDeleted }) {
+function Card({ id, board_id, message, gif, author, upvotes_on_load, pinned_on_load, onCardDeleted, onPin }) {
 
   const [upvotes, setUpvotes] = useState(upvotes_on_load);
+  const [pinned, setPinned] = useState(pinned_on_load);
 
   const deleteCard = () => {
     axios.delete(`${baseURL}/boards/${board_id}/cards/${id}/`)
@@ -31,6 +32,19 @@ function Card({ id, board_id, message, gif, author, upvotes_on_load, onCardDelet
     
   };
 
+  const handlePin = () => {
+    axios.patch(`${baseURL}/boards/${board_id}/cards/${id}/pin/`)
+      .then((response) => {
+        console.log(response);
+        setPinned(prev => !prev);
+        onPin();  
+      })
+      .catch((error) => {
+        console.error(error.response.data);
+      });
+  
+  };
+
   return (
     <div className='card'>
       <p>{message}</p>
@@ -39,6 +53,9 @@ function Card({ id, board_id, message, gif, author, upvotes_on_load, onCardDelet
         <button onClick={upvoteCard}>Upvote: {upvotes}</button>
         <button onClick={deleteCard}>Delete</button>
       </div>
+      <button style={{ color: pinned ? 'red' : 'black' }} onClick={handlePin}>
+        Pin ★
+      </button>
     </div>
   )
 }

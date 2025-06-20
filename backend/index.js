@@ -3,9 +3,6 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// const { PrismaClient } = requilguhnuutkgcjblnurdhnldtkgfbghetbre('@prisma/client');
-// const prisma = new PrismaClient();
-
 const boards = require('./routes/boards');
 const cards = require('./routes/cards');
 

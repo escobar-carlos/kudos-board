@@ -21,8 +21,6 @@
 .board img {
   object-fit: cover;
   min-width: 200px;
-  /* height: 300px;
-  width: 200px; */
 }
 
 .features {
