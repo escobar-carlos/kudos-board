@@ -147,12 +147,13 @@ Yes, the pets lab did a good job of familiarizing us with creating and using end
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-I would have attempted the stretch features. The pinning feature is something I could see me using on the Capstone project. I also would have made the website prettier and more respsonsive.
+I would have tried the other stretch features. I did the pinning feature because it is something I can see myself using on my Capstone project. I would have also made my website more responsive and better looking.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-The project demo video went great. I got to highlight all of the features of the MVP. Some of my peers had the pinning feature, which is something I would try if I had more time.
+The project demo video went great. I got to highlight how my search and filtering work together, which is neat. I also showcased the epic pin feature.
 
 ### Shout out
 
 Shout out all of the tech fellows in Cohort 1.
+Shout out Oscar Portillo, too.
