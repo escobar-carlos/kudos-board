@@ -5,7 +5,7 @@ function FilterList({ filters, handleFilterClick }) {
     <div className='filters'>
       {
         filters.map(filter => {
-          return <Filter category={filter} handleFilterClick={handleFilterClick}/>
+          return <Filter key={filter} category={filter} handleFilterClick={handleFilterClick}/>
         })
       }
     </div>
