@@ -72,20 +72,13 @@ function HomePage() {
     setFilter('');
   }
 
-  const filters = ['All', 'Recent', 'Celebrations', 'Thank You', 'Inspiration'];
+  const filters = ['All', 'Recent', 'Celebration', 'Thank You', 'Inspiration'];
 
   return (
     <div className='home-page'>
       <Banner />
       <SearchForm handleSearch={handleSearch} handleClear={handleClear}/>
       <FilterList filters={filters} handleFilterClick={handleFilterClick}/>
-      {/* <div className='filters'>
-        <Filter category={'All'} handleFilterClick={handleFilterClick}/>
-        <Filter category={'Recent'} handleFilterClick={handleFilterClick}/>
-        <Filter category={'Celebration'} handleFilterClick={handleFilterClick}/>
-        <Filter category={'Thank You'} handleFilterClick={handleFilterClick}/>
-        <Filter category={'Inspiration'} handleFilterClick={handleFilterClick}/>
-      </div> */}
       <button id="create-new-button" onClick={toggleForm}>Create a New Board</button>
       {showForm && <NewBoardForm onClose={toggleForm} onBoardAdded={fetchBoards}/>}
       {boardData && <BoardList boardData={filteredBoardData} onBoardDeleted={fetchBoards}/>}
