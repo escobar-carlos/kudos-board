@@ -14,5 +14,3 @@ function CardList({ cardData, onCardDeleted }) {
 }
 
 export default CardList
-
-// TODO: add author to database table

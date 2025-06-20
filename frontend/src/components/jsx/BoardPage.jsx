@@ -39,7 +39,6 @@ function BoardPage() {
         </Link>
         <Banner />
       </div>
-      {/* TODO: Board Title Here*/}
       <button id="create-new-button" onClick={toggleForm}>Create a New Card</button>
       {/* NewBoardForm should only popup when the button above is clicked*/}
       {showForm && <NewCardForm boardId={boardId} onClose={toggleForm} onCardAdded={fetchCards}/>}

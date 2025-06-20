@@ -143,20 +143,16 @@ Deployed Application: [Kudos Board Deployed Site](https://kudos-board-frontend-s
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes, the pets lab did a good job of familiarizing us with creating and using endpoints. Something I felt unprepared for was React Routing, as I had to look for external resources to understand what they are and how to use them.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+I would have attempted the stretch features. The pinning feature is something I could see me using on the Capstone project. I also would have made the website prettier and more respsonsive.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
-
-### Open-source libraries used
-
-- Add any links to open-source libraries used in your project.
+The project demo video went great. I got to highlight all of the features of the MVP. Some of my peers had the pinning feature, which is something I would try if I had more time.
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shout out all of the tech fellows in Cohort 1.
