@@ -6,7 +6,6 @@ function SearchForm({ handleSearch, handleClear }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const query = event.target[0].value;
-    event.target.reset();
     handleSearch(query);
   };
 
