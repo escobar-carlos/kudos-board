@@ -113,29 +113,29 @@ Deployed Application: [Kudos Board Deployed Site](https://kudos-board-frontend-s
   - [ ] The chosen mode (light or dark) persists when navigating from home page to board pages and vice versa.
   - [ ] When the user first visits the site the theme defaults to light mode.
   - [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS**: To ease the grading process, please use the [color contrast checker](https://webaim.org/resources/contrastchecker/) to demonstrate to the grading team that text and background colors on your website have appropriate contrast in both light and dark mode. The Contrast Ratio should be above 4.5:1 and should have a green box surrounding it. 
-- [ ] **Pinned Cards**
-  - [ ] Users can pin a card to the top of the board.
-  - [ ] A Pin button is displayed on each card.
-  - [ ] When the user clicks the Pin button of an unpinned card:
-    - [ ] The card moves to the top of the grid view for that board.
-    - [ ] There is some visual feedback to indicate a card's pin status (e.g., a pin icon, a border highlight).
-    - [ ] The pin action is saved so that the card remains pinned after page refreshes.
-  - [ ] When the user clicks the Pin button of a pinned card:
-    - [ ] The card returns to its original position in the grid based on its creation time or to the end of the grid.
-    - [ ] The card's pin status (e.g., a pin icon or highlight)  is removed.
-    - [ ] The unpin action is saved so that the card remains unpinned after page refresh.
-  - [ ] Pinned cards always appear at the top of the board, above unpinned cards.
-  - [ ] If multiple cards are pinned, they maintain their pinned order based on the time they were pinned.
-    - [ ] More recent pins should appear first.
-- [ ] The pinned state of a card persists when:
-  - [ ] navigating away from and back to the board.
-  - [ ] refreshing the page. 
+- [x] **Pinned Cards**
+  - [x] Users can pin a card to the top of the board.
+  - [x] A Pin button is displayed on each card.
+  - [x] When the user clicks the Pin button of an unpinned card:
+    - [x] The card moves to the top of the grid view for that board.
+    - [x] There is some visual feedback to indicate a card's pin status (e.g., a pin icon, a border highlight).
+    - [x] The pin action is saved so that the card remains pinned after page refreshes.
+  - [x] When the user clicks the Pin button of a pinned card:
+    - [x] The card returns to its original position in the grid based on its creation time or to the end of the grid.
+    - [x] The card's pin status (e.g., a pin icon or highlight)  is removed.
+    - [x] The unpin action is saved so that the card remains unpinned after page refresh.
+  - [x] Pinned cards always appear at the top of the board, above unpinned cards.
+  - [x] If multiple cards are pinned, they maintain their pinned order based on the time they were pinned.
+    - [x] More recent pins should appear first.
+- [x] The pinned state of a card persists when:
+  - [x] navigating away from and back to the board.
+  - [x] refreshing the page. 
 
 ### Walkthrough Video
 
 <div>
-  <a href="https://www.loom.com/share/c3dc955d4ef846ed9bd6364c0f239169">
-    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/c3dc955d4ef846ed9bd6364c0f239169-c533eb86aaee0bc5-full-play.gif">
+  <a href="https://www.loom.com/share/be24832b530e460e95a07dc16642475a">
+    <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/be24832b530e460e95a07dc16642475a-826786a23a2cda2e-full-play.gif">
   </a>
 </div>
 
