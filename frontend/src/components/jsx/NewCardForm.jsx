@@ -87,7 +87,6 @@ function NewCardForm({ boardId, onClose, onCardAdded }) {
           <button type='button' onClick={searchGifs}>Search</button>
           {gifs.length > 0 && <GifList gifs={gifs} handleClick={handleGifSelect}/>}
           <input type="text" placeholder='Enter GIF URL' name="gif" value={selectedGif} onChange={(e) => setSelectedGif(e.target.value)}/>
-          {/* <button type='submit'>Copy GIF URL</button> */}
           <input type="text" placeholder='Enter author (optional)' name='author'/>
           <button type='submit'>Create Card</button>
         </form>

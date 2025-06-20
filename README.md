@@ -40,7 +40,7 @@ Deployed Application: [Kudos Board Deployed Site](https://kudos-board-frontend-s
     - [x] Presses the Enter key
     - [x] Clicks the Submit/Search button 
   - [x] User can delete all text from the text input field. 
-  - [ ] When all text is cleared from the text input field, all boards are displayed in a grid view
+  - [x] When all text is cleared from the text input field, all boards are displayed in a grid view
 - [x] **View Board** 
   - [x] Users can click on a board in the grid view to navigate to a new page containing that board's details.
 - [x] **Add New Board**
@@ -49,7 +49,7 @@ Deployed Application: [Kudos Board Deployed Site](https://kudos-board-frontend-s
     - [x] Title (required)
     - [x] Category (required)
     - [x] Author (optional)
-  - [ ] Items listed as required above must have a value to succesffuly create a new board.
+  - [x] Items listed as required above must have a value to succesffuly create a new board.
   - [x] When the board is successfully created, it appears in the grid of boards. 
 - [x] **Delete Board**
   - [x] User can delete boards on the home page. 
@@ -68,7 +68,7 @@ Deployed Application: [Kudos Board Deployed Site](https://kudos-board-frontend-s
   - [x] Users can make a new card associated with the current board. 
   - [x] To successfully create a new card, users must specify the following:
     - [x] Text message (required).
-    - [ ] A gif users can search for and select within the form using the [GIPHY API](https://developers.giphy.com/docs/api/) (required).
+    - [x] A gif users can search for and select within the form using the [GIPHY API](https://developers.giphy.com/docs/api/) (required).
   - [x] Users are given the option to specify the author of the card.
   - [x] When the new card is successfully created, it appears in the grid of cards. 
 - [x] **Upvote Card**

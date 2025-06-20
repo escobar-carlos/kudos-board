@@ -12,7 +12,7 @@ function SearchForm({ handleSearch, handleClear }) {
 
   return (
     <form className="search-form" onSubmit={handleSubmit}>
-      <input type="text" placeholder="Search"/>
+      <input type="text" placeholder="Search" onChange={(e) => handleSearch(e.target.value)}/>
       <div id="search-helper-buttons">
         <button type="submit">Submit</button>
         <button type="reset" onClick={handleClear}>Clear</button>
