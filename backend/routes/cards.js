@@ -4,6 +4,7 @@ const cards = express.Router({ mergeParams: true });
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient();
 
+// Get ALL of the cards, and order accordingly
 cards.get('/', async (req, res) => {
   const boardId = parseInt(req.params.boardId);
   const cards = await prisma.card.findMany({
@@ -17,6 +18,7 @@ cards.get('/', async (req, res) => {
   res.json(cards);
 });
 
+// Delete a specific card
 cards.delete('/:id', async (req, res) => {
   try {
     const id = parseInt(req.params.id);
@@ -28,6 +30,7 @@ cards.delete('/:id', async (req, res) => {
   }
 });
 
+// Add a new card
 cards.post('/', async (req, res) => {
   const boardId = parseInt(req.params.boardId);
   const {message, gif} = req.body;
@@ -45,6 +48,7 @@ cards.post('/', async (req, res) => {
   res.status(201).json(newCard);
 });
 
+// Increment upvote column by 1 of a specific card 
 cards.patch('/:id/upvote', async (req, res) => {
   try {
     const id = parseInt(req.params.id);
@@ -63,6 +67,7 @@ cards.patch('/:id/upvote', async (req, res) => {
   }
 });
 
+// Toggle pinned state of a specific card 
 cards.patch('/:id/pin', async (req, res) => {
   try {
     const id = parseInt(req.params.id);
@@ -70,10 +75,6 @@ cards.patch('/:id/pin', async (req, res) => {
     const prev_card = await prisma.card.findUnique({
       where: {id}
     });
-
-    // dataeteuuhhvkklnceteednjlfhnlirrrvce
-    // if not pinned, then add new Date, else null
-    // pinned = !pinned
 
     const updated = await prisma.card.update({
       where: {id},

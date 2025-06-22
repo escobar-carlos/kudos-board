@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import './../css/BoardPage.css'
 import { useParams, Link } from "react-router-dom";
 import { baseURL } from '../../globals';
+import axios from 'axios';
 import Banner from './Banner'
 import NewCardForm from './NewCardForm'
 import CardList from './CardList'
@@ -13,20 +14,22 @@ function BoardPage() {
   const [cardData, setCardData] = useState([]);
   const [showForm, setShowForm] = useState(false);
 
+  // Initial fetch of card data
   useEffect(() => {
     fetchCards();
   }, []);
 
+  // Fetch cards from DB
   const fetchCards = async () => {
     try {
-      const response = await fetch(`${baseURL}/boards/${boardId}/cards`);
-      const data = await response.json();
-      setCardData(data);
+      const response = await axios.get(`${baseURL}/boards/${boardId}/cards`);
+      setCardData(response.data);
     } catch (error) {
-      console.error(error);
+      alert(`Error fetching cards: ${error.response.data}`);
     }
   };
 
+  // Control whether to display new card form or not
   const toggleForm = () => {
     setShowForm(prev => !prev);
   };

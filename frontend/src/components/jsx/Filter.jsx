@@ -1,4 +1,3 @@
-
 function Filter({ category, handleFilterClick }) {
   return (
     <button onClick={() => handleFilterClick(category)}>

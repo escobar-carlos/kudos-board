@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './../css/HomePage.css'
 import { baseURL } from '../../globals';
+import axios from 'axios';
 import Banner from './Banner'
 import SearchForm from './SearchForm'
 import FilterList from './FilterList';
@@ -16,25 +17,28 @@ function HomePage() {
   const [showForm, setShowForm] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
+  // Initial fetch of card data
   useEffect(() => {
     fetchBoards();
   }, []);
 
+  // Rerender boards when query, filter, or boardData change
   useEffect(() => {
     renderBoards();
   }, [searchQuery, filter, boardData]);
 
+  // Fetch boards from DB
   const fetchBoards = async () => {
     try {
-      const response = await fetch(`${baseURL}/boards/`);
-      const data = await response.json();
-      setBoardData(data);
-      setFilteredBoardData(data);
+      const response = await axios.get(`${baseURL}/boards/`);
+      setBoardData(response.data);
+      setFilteredBoardData(response.data);
     } catch (error) {
-      console.error(error);
+      alert(`Error fetching boards: ${error.response.data}`);
     }
   };
 
+  // Filter boardData based on search and/or filter
   const renderBoards = () => {
     let matchingBoards = boardData;
     if (searchQuery) {
@@ -51,27 +55,33 @@ function HomePage() {
     setFilteredBoardData(matchingBoards);
   };
 
+  // Control whether to display new board form or not
   const toggleForm = () => {
     setShowForm(prev => !prev);
   };
 
+  // Handle user click on a filter
   const handleFilterClick = (category) => {
+    // Reset filter
     if (category == 'All') {
       setFilter('');
     } else {
       setFilter(category);
     }
-  }
+  };
 
+  // Handle user search
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
 
+  // Reset query and filter state variables
   const handleClear =() => {
     setSearchQuery('');
     setFilter('');
-  }
+  };
 
+  // Filter options
   const filters = ['All', 'Recent', 'Celebration', 'Thank You', 'Inspiration'];
 
   return (

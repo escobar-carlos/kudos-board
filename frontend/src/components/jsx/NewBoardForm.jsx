@@ -4,18 +4,21 @@ import axios from 'axios';
 
 function NewBoardForm({ onClose, onBoardAdded }) {
 
+  // Close modal when click is registered outside of it
   const handleClickOutside = (event) => {
     if (event.target.id === 'overlay') {
       onClose();
     }
-  }
+  };
 
+  // Close modal when 'X' icon is clicked
   const handleClickClose = (event) => {
     event.stopPropagation();
     onClose();
-  }
+  };
 
-  const handleSubmit = (event) => {
+  // Handle form submission; user input is retrieved and sent to DB to create new board
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const title = event.target.title.value;
     const category = event.target.category.value;
@@ -27,15 +30,13 @@ function NewBoardForm({ onClose, onBoardAdded }) {
       author
     }
 
-    axios.post(`${baseURL}/boards/`, newBoard)
-      .then((response) => {
-        onClose();
-        onBoardAdded();
-      })
-      .catch((error) => {
-        alert(error.response.data);
-      });
-    
+    try {
+      await axios.post(`${baseURL}/boards/`, newBoard);
+      onClose();
+      onBoardAdded();
+    } catch (error) {
+      alert(`Error adding new board: ${error.response.data}`);
+    }
   };
 
   return (

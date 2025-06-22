@@ -4,11 +4,13 @@ const boards = express.Router();
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient();
 
+// Get ALL of the boards
 boards.get('/', async (req, res) => {
   const boards = await prisma.board.findMany();
   res.send(boards);
 });
 
+// Add a new board
 boards.post('/', async (req, res) => {
   const {title, category} = req.body;
   if (!title || !category) {
@@ -22,6 +24,7 @@ boards.post('/', async (req, res) => {
   res.status(201).json(newBoard);
 });
 
+// Delete a specific board
 boards.delete('/:id', async (req, res) => {
   try {
     const id = parseInt(req.params.id);

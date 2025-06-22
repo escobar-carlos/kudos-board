@@ -5,16 +5,14 @@ import { baseURL } from '../../globals';
 
 function Board({ id, title, category, image, onBoardDeleted }) {
 
-  const deleteBoard = () => {
-    axios.delete(`${baseURL}/boards/${id}/`)
-      .then((response) => {
-        console.log(response);
-        onBoardDeleted();
-      })
-      .catch((error) => {
-        console.error(error.response.data);
-      });
-    
+  // Delete board from DB and then fetches updated board data
+  const deleteBoard = async () => {
+    try {
+      await axios.delete(`${baseURL}/boards/${id}/`);
+      onBoardDeleted();
+    } catch (error) {
+      alert(`Error deleting board: ${error.response.data}`);
+    }
   };
 
   return (

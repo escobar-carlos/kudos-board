@@ -13,21 +13,25 @@ function NewCardForm({ boardId, onClose, onCardAdded }) {
 
   const apiKey = import.meta.env.VITE_GIPHY_API_KEY;
 
+  // Close modal when click is registered outside of it
   const handleClickOutside = (event) => {
     if (event.target.id === 'new-card-overlay') {
       onClose();
     }
   };
 
+  // Close modal when 'X' icon is clicked
   const handleClickClose = (event) => {
     event.stopPropagation();
     onClose();
   };
 
+  // Handle GIF input change
   const handleInputChange = (event) => {
     setGifSearch(event.target.value);
   };
 
+  // Search GIFs using GIPHY API
   const searchGifs = async () => {
     try {
       const response = await axios.get("https://api.giphy.com/v1/gifs/search", {
@@ -43,17 +47,18 @@ function NewCardForm({ boardId, onClose, onCardAdded }) {
 
       setGifs(gifLinks);
 
-
     } catch (error) {
       console.error("Error fetching GIFs: ", error);
     }
   };
 
+  // Handle GIF selection
   const handleGifSelect = (gifLink) => {
     setSelectedGif(gifLink);
-  }
+  };
 
-  const handleSubmit = (event) => {
+  // Handle form submission; user input is retrieved and sent to DB to create new card
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const message = event.target.message.value;
     const gif = event.target.gif.value;
@@ -65,15 +70,13 @@ function NewCardForm({ boardId, onClose, onCardAdded }) {
       author
     }
 
-    axios.post(`${baseURL}/boards/${boardId}/cards/`, newCard)
-      .then((response) => {
-        onClose();
-        onCardAdded();
-      })
-      .catch((error) => {
-        alert(error.response.data);
-      });
-    
+    try {
+      await axios.post(`${baseURL}/boards/${boardId}/cards/`, newCard);
+      onClose();
+      onCardAdded();
+    } catch (error) {
+      alert(`Error adding new card: ${error.response.data}`);
+    }
   };
 
   return (

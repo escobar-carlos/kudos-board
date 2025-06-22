@@ -2,7 +2,7 @@ import './../css/SearchForm.css'
 
 function SearchForm({ handleSearch, handleClear }) {
 
-  // Handles user search
+  // Handle user submission of search
   const handleSubmit = (event) => {
     event.preventDefault();
     const query = event.target[0].value;
